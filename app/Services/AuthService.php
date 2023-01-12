@@ -12,6 +12,13 @@ use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
 
+/**
+ * Класс-сервис для аутентификации
+ *
+ * Class AuthService
+ *
+ * @package App\Services
+ */
 class AuthService
 {
     /**

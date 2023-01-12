@@ -10,7 +10,18 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Passport\HasApiTokens;
 
-class User extends Authenticatable implements MustVerifyEmail
+/**
+ * Модель пользователя
+ *
+ * Class User
+ *
+ * @package App\Models
+ *
+ * @property string name     Имя пользователя
+ * @property string email    Емейл пользователя
+ * @property string password Пароль пользователя
+ */
+class User extends Authenticatable
 {
     use HasFactory, Notifiable, HasApiTokens;
 
@@ -48,6 +59,7 @@ class User extends Authenticatable implements MustVerifyEmail
      * Метод поиска необходимого пользователя
      *
      * @param string $username
+     *
      * @return \App\Models\User
      */
     public function findForPassport($username)

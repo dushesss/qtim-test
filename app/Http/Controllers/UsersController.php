@@ -12,8 +12,22 @@ use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Auth;
 use Validator;
 
+/**
+ * Контроллер для управления пользователем
+ *
+ * Class UsersController
+ *
+ * @package App\Http\Controllers
+ */
 class UsersController extends Controller
 {
+    /**
+     * Экшен регистрирует пользователя
+     *
+     * @param Request $request
+     *
+     * @return Response
+     */
     public function register(Request $request): Response
     {
         try {
@@ -35,6 +49,13 @@ class UsersController extends Controller
         }
     }
 
+    /**
+     * Экшен производит аутентификацию пользователя по введенным данным
+     *
+     * @param Request $request
+     *
+     * @return Response
+     */
     public function login(Request $request): Response
     {
         try {

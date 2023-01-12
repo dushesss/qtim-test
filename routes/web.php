@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\PostConroller;
+use App\Http\Controllers\PostController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,4 +18,4 @@ Route::get('/', function () {
     return view('register');
 });
 
-//Route::get('posts/all', [PostConroller::class, "index"]);
+//Route::get('posts/all', [PostController::class, "index"]);

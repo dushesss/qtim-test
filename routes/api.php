@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\PostConroller;
+use App\Http\Controllers\PostController;
 use App\Http\Controllers\UsersController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -24,7 +24,10 @@ Route::post('/register', [UsersController::class, "register"])->name('auth.regis
 
 Route::post('/login', [UsersController::class, "login"])->name('login');
 
+Route::get('/posts/all', [PostController::class, "index"]);
 
-Route::middleware('auth:api')->group( function () {
-    Route::post('/posts/all', [PostConroller::class, "index"]);
-});
+Route::post('/posts/create', [PostController::class, "store"]);
+
+Route::put('/posts/{postId}', [PostController::class, "update"])->middleware('auth:api');
+
+Route::delete('/posts/{postId}', [PostController::class, "delete"])->middleware('auth:api');
