@@ -42,9 +42,8 @@ return [
         ],
 
         'api' => [
-            'driver' => 'token',
+            'driver' => 'passport',
             'provider' => 'users',
-            'hash' => false,
         ],
     ],
 
@@ -99,6 +98,12 @@ return [
             'expire' => 60,
             'throttle' => 60,
         ],
+    ],
+
+    'client_data' => [
+        'client_id' => getenv('PASSPORT_CLIENT_ID', null),
+        'client_secret' => getenv('PASSPORT_CLIENT_SECRET', null),
+        'grand_type' => getenv('PASSPORT_GRAND_TYPE', 'password')
     ],
 
     /*
